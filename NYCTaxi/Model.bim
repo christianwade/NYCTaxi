@@ -1,0 +1,1089 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "NYC Taxi SQL DW",
+        "connectionString": "Data Source=v12dbserver.database.windows.net;Initial Catalog=NYTaxiDW;User ID=cloudsa;Persist Security Info=true;Encrypt=true;TrustServerCertificate=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "provider": "System.Data.SqlClient",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlAzure"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Date",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "DateID",
+            "dataType": "int64",
+            "sourceColumn": "DateID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime"
+          },
+          {
+            "name": "DateBKey",
+            "dataType": "string",
+            "sourceColumn": "DateBKey",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "DayOfMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfMonth",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DaySuffix",
+            "dataType": "string",
+            "sourceColumn": "DaySuffix",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayName",
+            "dataType": "string",
+            "sourceColumn": "DayName",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "DayOfWeekInMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInMonth",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfWeekInYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInYear",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "DayOfQuarter",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfYear",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "WeekOfMonth",
+            "dataType": "string",
+            "sourceColumn": "WeekOfMonth",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "WeekOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "WeekOfQuarter",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "WeekOfYear",
+            "dataType": "string",
+            "sourceColumn": "WeekOfYear",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sortByColumn": "Month",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "MonthOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "MonthOfQuarter",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "sourceColumn": "Quarter",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "QuarterName",
+            "dataType": "string",
+            "sourceColumn": "QuarterName",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "YearName",
+            "dataType": "string",
+            "sourceColumn": "YearName",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "MonthYear",
+            "dataType": "string",
+            "sourceColumn": "MonthYear",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "MMYYYY",
+            "dataType": "string",
+            "sourceColumn": "MMYYYY",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "FirstDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfMonth",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "LastDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfMonth",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "FirstDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfQuarter",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "LastDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfQuarter",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "FirstDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfYear",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "LastDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfYear",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "IsHolidayUSA",
+            "dataType": "boolean",
+            "sourceColumn": "IsHolidayUSA",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit"
+          },
+          {
+            "name": "IsWeekday",
+            "dataType": "boolean",
+            "sourceColumn": "IsWeekday",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit"
+          },
+          {
+            "name": "HolidayUSA",
+            "dataType": "string",
+            "sourceColumn": "HolidayUSA",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "type": "calculated",
+            "name": "YYYY-MM",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RIGHT('Date'[MMYYYY], 4) & \"-\" & LEFT('Date'[MMYYYY], 2)"
+          },
+          {
+            "type": "calculated",
+            "name": "YYYYMM",
+            "dataType": "int64",
+            "isDataTypeInferred": false,
+            "expression": "RIGHT('Date'[MMYYYY], 4) & LEFT('Date'[MMYYYY], 2)"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Date",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [Date].* FROM [Date] ",
+              "dataSource": "NYC Taxi SQL DW"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Calendar",
+            "levels": [
+              {
+                "name": "Year",
+                "ordinal": 0,
+                "column": "Year"
+              },
+              {
+                "name": "Quarter",
+                "ordinal": 1,
+                "column": "QuarterName"
+              },
+              {
+                "name": "Month",
+                "ordinal": 2,
+                "column": "MonthName"
+              },
+              {
+                "name": "Day",
+                "ordinal": 3,
+                "column": "DateBKey"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Date].* FROM [Date] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Date"
+          }
+        ]
+      },
+      {
+        "name": "Medallion",
+        "columns": [
+          {
+            "name": "MedallionID",
+            "dataType": "int64",
+            "sourceColumn": "MedallionID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "MedallionBKey",
+            "dataType": "string",
+            "sourceColumn": "MedallionBKey",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "MedallionCode",
+            "dataType": "string",
+            "sourceColumn": "MedallionCode",
+            "sourceProviderType": "varchar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Medallion",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [Medallion].* FROM [Medallion] ",
+              "dataSource": "NYC Taxi SQL DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Medallion].* FROM [Medallion] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Medallion"
+          }
+        ]
+      },
+      {
+        "name": "Pickup Time",
+        "columns": [
+          {
+            "name": "TimeID",
+            "dataType": "int64",
+            "sourceColumn": "TimeID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "TimeBKey",
+            "dataType": "string",
+            "sourceColumn": "TimeBKey",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "HourNumber",
+            "dataType": "int64",
+            "sourceColumn": "HourNumber",
+            "sourceProviderType": "tinyint"
+          },
+          {
+            "name": "MinuteNumber",
+            "dataType": "int64",
+            "sourceColumn": "MinuteNumber",
+            "sourceProviderType": "tinyint"
+          },
+          {
+            "name": "SecondNumber",
+            "dataType": "int64",
+            "sourceColumn": "SecondNumber",
+            "sourceProviderType": "tinyint"
+          },
+          {
+            "name": "TimeInSecond",
+            "dataType": "int64",
+            "sourceColumn": "TimeInSecond",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "HourlyBucket",
+            "dataType": "string",
+            "sourceColumn": "HourlyBucket",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayTimeBucketGroupKey",
+            "dataType": "int64",
+            "sourceColumn": "DayTimeBucketGroupKey",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "DayTimeBucket",
+            "dataType": "string",
+            "sourceColumn": "DayTimeBucket",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "type": "calculated",
+            "name": "Hour",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LEFT([HourlyBucket], 5)"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Time",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [Time].* FROM [Time] ",
+              "dataSource": "NYC Taxi SQL DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Time].* FROM [Time] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Time"
+          }
+        ]
+      },
+      {
+        "name": "Trip",
+        "columns": [
+          {
+            "name": "DateID",
+            "dataType": "int64",
+            "sourceColumn": "DateID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "PickupTimeID",
+            "dataType": "int64",
+            "sourceColumn": "PickupTimeID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "MedallionID",
+            "dataType": "int64",
+            "sourceColumn": "MedallionID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "HackneyLicenseID",
+            "dataType": "int64",
+            "sourceColumn": "HackneyLicenseID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "DropoffTimeID",
+            "dataType": "int64",
+            "sourceColumn": "DropoffTimeID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "PassengerCount",
+            "dataType": "int64",
+            "sourceColumn": "PassengerCount",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "TripDurationSeconds",
+            "dataType": "int64",
+            "sourceColumn": "TripDurationSeconds",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "TripDistanceMiles",
+            "dataType": "double",
+            "sourceColumn": "TripDistanceMiles",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "PickupLongitude",
+            "dataType": "double",
+            "sourceColumn": "PickupLongitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "PickupLatitude",
+            "dataType": "double",
+            "sourceColumn": "PickupLatitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "DropoffLongitude",
+            "dataType": "double",
+            "sourceColumn": "DropoffLongitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "DropoffLatitude",
+            "dataType": "double",
+            "sourceColumn": "DropoffLatitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "PaymentType",
+            "dataType": "string",
+            "sourceColumn": "PaymentType",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "FareAmount",
+            "dataType": "decimal",
+            "sourceColumn": "FareAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "SurchargeAmount",
+            "dataType": "decimal",
+            "sourceColumn": "SurchargeAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TaxAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TipAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TipAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TollsAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TollsAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TotalAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TotalAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "PickupGeographyID",
+            "dataType": "int64",
+            "sourceColumn": "PickupGeographyID"
+          },
+          {
+            "name": "DropoffGeographyID",
+            "dataType": "int64",
+            "sourceColumn": "DropoffGeographyID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Trip",
+            "dataView": "full",
+            "source": {
+              "query": "SELECT top 100 * FROM dbo.[vTrip]",
+              "dataSource": "NYC Taxi SQL DW"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT top 100 * FROM dbo.[vTrip]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+              }
+            ]
+          }
+        ],
+        "measures": [
+          {
+            "name": "Tip Amount",
+            "expression": " SUM( 'Trip'[TipAmount] )",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Trip Count",
+            "expression": " COUNTROWS(Trip)"
+          },
+          {
+            "name": "Trip Distance Miles",
+            "expression": "SUM([TripDistanceMiles])"
+          },
+          {
+            "name": "Revenue",
+            "expression": "SUM([TotalAmount])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Revenue per Mile",
+            "expression": "[Revenue]/[Trip Distance Miles]"
+          },
+          {
+            "name": "Tip Amount per Trip",
+            "expression": " DIVIDE([Tip Amount], [Trip Count])"
+          },
+          {
+            "name": "Tip Amount per Mile",
+            "expression": " DIVIDE([Tip Amount], [Trip Distance Miles])"
+          },
+          {
+            "name": "Revenue per Trip",
+            "expression": " DIVIDE([Tip Amount], [Trip Count])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": "SELECT top 100 * FROM dbo.[vTrip]"
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Trip"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT top 100 * FROM dbo.[vTrip]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+          }
+        ]
+      },
+      {
+        "name": "Dropoff Time",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "TimeID",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[TimeID]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "TimeBKey",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[TimeBKey]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "HourNumber",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[HourNumber]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "MinuteNumber",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[MinuteNumber]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "SecondNumber",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[SecondNumber]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "TimeInSecond",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[TimeInSecond]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "HourlyBucket",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[HourlyBucket]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "DayTimeBucketGroupKey",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[DayTimeBucketGroupKey]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "DayTimeBucket",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[DayTimeBucket]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Hour",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Time[Hour]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "'Pickup Time'"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Weather",
+        "columns": [
+          {
+            "name": "DateID",
+            "dataType": "int64",
+            "sourceColumn": "DateID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "GeographyID",
+            "dataType": "int64",
+            "sourceColumn": "GeographyID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "PrecipitationInches",
+            "dataType": "double",
+            "sourceColumn": "PrecipitationInches",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "AvgTemperatureFahrenheit",
+            "dataType": "double",
+            "sourceColumn": "AvgTemperatureFahrenheit",
+            "sourceProviderType": "float"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Weather",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [Weather].* FROM [Weather] ",
+              "dataSource": "NYC Taxi SQL DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Weather].* FROM [Weather] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Weather"
+          }
+        ]
+      },
+      {
+        "name": "Pickup Geography",
+        "columns": [
+          {
+            "name": "GeographyID",
+            "dataType": "int64",
+            "sourceColumn": "GeographyID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "ZipCodeBKey",
+            "dataType": "string",
+            "sourceColumn": "ZipCodeBKey",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "County",
+            "dataType": "string",
+            "sourceColumn": "County"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State"
+          },
+          {
+            "name": "ZipCode",
+            "dataType": "string",
+            "sourceColumn": "ZipCode"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Geography",
+            "dataView": "full",
+            "source": {
+              "query": "SELECT [Geography].* FROM [Geography]",
+              "dataSource": "NYC Taxi SQL DW"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [Geography].* FROM [Geography]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": "SELECT [Geography].* FROM [Geography]"
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Geography"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [Geography].* FROM [Geography]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+          }
+        ]
+      },
+      {
+        "name": "Hackney License",
+        "columns": [
+          {
+            "name": "HackneyLicenseID",
+            "dataType": "int64",
+            "sourceColumn": "HackneyLicenseID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "HackneyLicenseBKey",
+            "dataType": "string",
+            "sourceColumn": "HackneyLicenseBKey",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "HackneyLicenseCode",
+            "dataType": "string",
+            "sourceColumn": "HackneyLicenseCode",
+            "sourceProviderType": "varchar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "HackneyLicense",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [HackneyLicense].* FROM [HackneyLicense] ",
+              "dataSource": "NYC Taxi SQL DW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [HackneyLicense].* FROM [HackneyLicense] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "HackneyLicense"
+          }
+        ]
+      },
+      {
+        "name": "Dropoff Geography",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "GeographyID",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[GeographyID]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "ZipCodeBKey",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[ZipCodeBKey]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "City",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[City]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "County",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[County]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "State",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[State]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "ZipCode",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[ZipCode]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "'Pickup Geography'"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Top 10 Pickup Zip Codes",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Zip Code",
+            "dataType": "string",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[ZipCode]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "TOPN(10, VALUES('Pickup Geography'[ZipCode]), Trip[Revenue])"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "5ff89e53-c93e-4ca0-8a99-58063fb30174",
+        "fromTable": "Trip",
+        "fromColumn": "DateID",
+        "toTable": "Date",
+        "toColumn": "DateID"
+      },
+      {
+        "name": "4997732a-81fd-4b3e-ad15-1f26447e71e4",
+        "fromTable": "Trip",
+        "fromColumn": "PickupTimeID",
+        "toTable": "Pickup Time",
+        "toColumn": "TimeID"
+      },
+      {
+        "name": "955d8e45-4ede-48dd-bca7-40d227f78088",
+        "fromTable": "Trip",
+        "fromColumn": "MedallionID",
+        "toTable": "Medallion",
+        "toColumn": "MedallionID"
+      },
+      {
+        "name": "0329a1b6-c170-4a76-a53b-4aa83bc730b8",
+        "fromTable": "Trip",
+        "fromColumn": "HackneyLicenseID",
+        "toTable": "Hackney License",
+        "toColumn": "HackneyLicenseID"
+      },
+      {
+        "name": "2934c9a3-e98c-41f5-b6f6-0c6fec87a1bf",
+        "fromTable": "Weather",
+        "fromColumn": "DateID",
+        "toTable": "Date",
+        "toColumn": "DateID"
+      },
+      {
+        "name": "4b9bd896-973e-4b08-82da-2051b85300af",
+        "fromTable": "Weather",
+        "fromColumn": "GeographyID",
+        "toTable": "Pickup Geography",
+        "toColumn": "GeographyID"
+      },
+      {
+        "name": "aecf4dfb-f105-4971-ba75-c4e56f786eb5",
+        "fromTable": "Trip",
+        "fromColumn": "PickupGeographyID",
+        "toTable": "Pickup Geography",
+        "toColumn": "GeographyID"
+      },
+      {
+        "name": "224b0ea4-9832-4b21-ad99-8a9f4848da07",
+        "fromTable": "Trip",
+        "fromColumn": "DropoffGeographyID",
+        "toTable": "Dropoff Geography",
+        "toColumn": "GeographyID"
+      },
+      {
+        "name": "fbb7b135-65d2-4f0b-821a-9640807d8ec8",
+        "fromTable": "Weather",
+        "fromColumn": "GeographyID",
+        "toTable": "Dropoff Geography",
+        "toColumn": "GeographyID"
+      },
+      {
+        "name": "a346ee4b-47f4-4d7f-b3dc-bdb100c46e88",
+        "fromTable": "Trip",
+        "fromColumn": "DropoffTimeID",
+        "toTable": "Dropoff Time",
+        "toColumn": "TimeID"
+      },
+      {
+        "name": "758ef47e-b751-451d-9c7e-050a9e3b7a66",
+        "fromTable": "Pickup Geography",
+        "fromColumn": "ZipCode",
+        "toTable": "Top 10 Pickup Zip Codes",
+        "toColumn": "Zip Code"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
