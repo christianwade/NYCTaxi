@@ -118,7 +118,7 @@
             "name": "MonthName",
             "dataType": "string",
             "sourceColumn": "MonthName",
-            "sortByColumn": "Month",
+            "sortByColumn": "MonthNum",
             "sourceProviderType": "varchar"
           },
           {
@@ -238,6 +238,13 @@
             "dataType": "int64",
             "isDataTypeInferred": false,
             "expression": "RIGHT('Date'[MMYYYY], 4) & LEFT('Date'[MMYYYY], 2)"
+          },
+          {
+            "type": "calculated",
+            "name": "MonthNum",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LEFT('Date'[MMYYYY], 2)"
           }
         ],
         "partitions": [
@@ -649,6 +656,18 @@
           {
             "name": "Revenue per Trip",
             "expression": " DIVIDE([Tip Amount], [Trip Count])"
+          },
+          {
+            "name": "Miles per Trip",
+            "expression": "[Trip Distance Miles]/[Trip Count]"
+          },
+          {
+            "name": "Trip Duration Minutes",
+            "expression": "SUM(Trip[TripDurationSeconds]) / 60"
+          },
+          {
+            "name": "Minutes per Trip",
+            "expression": "DIVIDE([Trip Duration Minutes], [Trip Count])"
           }
         ],
         "annotations": [
