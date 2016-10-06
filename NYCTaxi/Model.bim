@@ -667,7 +667,7 @@
           },
           {
             "name": "Minutes per Trip",
-            "expression": "DIVIDE([Trip Duration Minutes], [Trip Count])"
+            "expression": "DIVIDE([Trip Duration Minutes], [Trip Count]) "
           }
         ],
         "annotations": [
