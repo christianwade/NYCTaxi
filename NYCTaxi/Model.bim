@@ -628,7 +628,8 @@
           },
           {
             "name": "Trip Distance Miles",
-            "expression": "SUM([TripDistanceMiles])"
+            "expression": "SUM([TripDistanceMiles])",
+            "formatString": "#,0"
           },
           {
             "name": "Revenue",
@@ -667,7 +668,7 @@
           },
           {
             "name": "Minutes per Trip",
-            "expression": "DIVIDE([Trip Duration Minutes], [Trip Count]) "
+            "expression": "DIVIDE([Trip Duration Minutes], [Trip Count])"
           }
         ],
         "annotations": [
@@ -1022,6 +1023,120 @@
             }
           }
         ]
+      },
+      {
+        "name": "User",
+        "isHidden": true,
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "User",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[User]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "User",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "DataTable(\"User\", STRING,",
+                "{",
+                "\t{\"sqlcl01@microsoft.com\"},",
+                "\t{\"sqlcl02@microsoft.com\"}",
+                "}",
+                ")"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Security",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "GeographyID",
+            "dataType": "int64",
+            "sourceColumn": "GeographyID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "User",
+            "dataType": "string",
+            "sourceColumn": "User",
+            "sourceProviderType": "VarChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Security",
+            "dataView": "full",
+            "source": {
+              "query": [
+                "SELECT GeographyID, 'sqlcl01@microsoft.com' AS [User]",
+                "FROM dbo.[Geography]",
+                "WHERE [State] = 'NY'",
+                "UNION",
+                "SELECT GeographyID, 'sqlcl02@microsoft.com' AS [User]",
+                "FROM dbo.[Geography]",
+                "WHERE [State] = 'NJ'",
+                "ORDER BY 1"
+              ],
+              "dataSource": "NYC Taxi SQL DW"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT GeographyID, 'sqlcl01@microsoft.com' AS [User]",
+                  "FROM dbo.[Geography]",
+                  "WHERE [State] = 'NY'",
+                  "UNION",
+                  "SELECT GeographyID, 'sqlcl02@microsoft.com' AS [User]",
+                  "FROM dbo.[Geography]",
+                  "WHERE [State] = 'NJ'",
+                  "ORDER BY 1</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": [
+              "SELECT GeographyID, 'sqlcl01@microsoft.com' AS [User]",
+              "FROM dbo.[Geography]",
+              "WHERE [State] = 'NY'",
+              "UNION",
+              "SELECT GeographyID, 'sqlcl02@microsoft.com' AS [User]",
+              "FROM dbo.[Geography]",
+              "WHERE [State] = 'NJ'",
+              "ORDER BY 1"
+            ]
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Security"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT GeographyID, 'sqlcl01@microsoft.com' AS [User]",
+              "FROM dbo.[Geography]",
+              "WHERE [State] = 'NY'",
+              "UNION",
+              "SELECT GeographyID, 'sqlcl02@microsoft.com' AS [User]",
+              "FROM dbo.[Geography]",
+              "WHERE [State] = 'NJ'",
+              "ORDER BY 1</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
       }
     ],
     "relationships": [
@@ -1101,6 +1216,437 @@
         "fromColumn": "ZipCode",
         "toTable": "Top 10 Pickup Zip Codes",
         "toColumn": "Zip Code"
+      },
+      {
+        "name": "a7eccdcf-5d69-4a5f-9d8e-b959c6cd72f2",
+        "fromTable": "Security",
+        "fromColumn": "User",
+        "toTable": "User",
+        "toColumn": "User"
+      },
+      {
+        "name": "9e015141-3daa-4de0-b753-1101397f09ed",
+        "fromTable": "Security",
+        "fromColumn": "GeographyID",
+        "toTable": "Pickup Geography",
+        "toColumn": "GeographyID",
+        "crossFilteringBehavior": "bothDirections",
+        "securityFilteringBehavior": "bothDirections"
+      }
+    ],
+    "perspectives": [
+      {
+        "name": "Taxi Operators",
+        "tables": [
+          {
+            "name": "Date",
+            "columns": [
+              {
+                "name": "Date"
+              },
+              {
+                "name": "DateBKey"
+              },
+              {
+                "name": "DateID"
+              },
+              {
+                "name": "DayName"
+              },
+              {
+                "name": "DayOfMonth"
+              },
+              {
+                "name": "DayOfQuarter"
+              },
+              {
+                "name": "DayOfWeek"
+              },
+              {
+                "name": "DayOfWeekInMonth"
+              },
+              {
+                "name": "DayOfWeekInYear"
+              },
+              {
+                "name": "DayOfYear"
+              },
+              {
+                "name": "DaySuffix"
+              },
+              {
+                "name": "FirstDayOfMonth"
+              },
+              {
+                "name": "FirstDayOfQuarter"
+              },
+              {
+                "name": "FirstDayOfYear"
+              },
+              {
+                "name": "HolidayUSA"
+              },
+              {
+                "name": "IsHolidayUSA"
+              },
+              {
+                "name": "IsWeekday"
+              },
+              {
+                "name": "LastDayOfMonth"
+              },
+              {
+                "name": "LastDayOfQuarter"
+              },
+              {
+                "name": "LastDayOfYear"
+              },
+              {
+                "name": "MMYYYY"
+              },
+              {
+                "name": "Month"
+              },
+              {
+                "name": "MonthName"
+              },
+              {
+                "name": "MonthNum"
+              },
+              {
+                "name": "MonthOfQuarter"
+              },
+              {
+                "name": "MonthYear"
+              },
+              {
+                "name": "Quarter"
+              },
+              {
+                "name": "QuarterName"
+              },
+              {
+                "name": "WeekOfMonth"
+              },
+              {
+                "name": "WeekOfQuarter"
+              },
+              {
+                "name": "WeekOfYear"
+              },
+              {
+                "name": "Year"
+              },
+              {
+                "name": "YearName"
+              },
+              {
+                "name": "YYYYMM"
+              },
+              {
+                "name": "YYYY-MM"
+              }
+            ],
+            "hierarchies": [
+              {
+                "name": "Calendar"
+              }
+            ]
+          },
+          {
+            "name": "Dropoff Geography",
+            "columns": [
+              {
+                "name": "City"
+              },
+              {
+                "name": "County"
+              },
+              {
+                "name": "GeographyID"
+              },
+              {
+                "name": "State"
+              },
+              {
+                "name": "ZipCode"
+              },
+              {
+                "name": "ZipCodeBKey"
+              }
+            ]
+          },
+          {
+            "name": "Dropoff Time",
+            "columns": [
+              {
+                "name": "DayTimeBucket"
+              },
+              {
+                "name": "DayTimeBucketGroupKey"
+              },
+              {
+                "name": "Hour"
+              },
+              {
+                "name": "HourlyBucket"
+              },
+              {
+                "name": "HourNumber"
+              },
+              {
+                "name": "MinuteNumber"
+              },
+              {
+                "name": "SecondNumber"
+              },
+              {
+                "name": "TimeBKey"
+              },
+              {
+                "name": "TimeID"
+              },
+              {
+                "name": "TimeInSecond"
+              }
+            ]
+          },
+          {
+            "name": "Hackney License",
+            "columns": [
+              {
+                "name": "HackneyLicenseBKey"
+              },
+              {
+                "name": "HackneyLicenseCode"
+              },
+              {
+                "name": "HackneyLicenseID"
+              }
+            ]
+          },
+          {
+            "name": "Medallion",
+            "columns": [
+              {
+                "name": "MedallionBKey"
+              },
+              {
+                "name": "MedallionCode"
+              },
+              {
+                "name": "MedallionID"
+              }
+            ]
+          },
+          {
+            "name": "Pickup Geography",
+            "columns": [
+              {
+                "name": "City"
+              },
+              {
+                "name": "County"
+              },
+              {
+                "name": "GeographyID"
+              },
+              {
+                "name": "State"
+              },
+              {
+                "name": "ZipCode"
+              },
+              {
+                "name": "ZipCodeBKey"
+              }
+            ]
+          },
+          {
+            "name": "Pickup Time",
+            "columns": [
+              {
+                "name": "DayTimeBucket"
+              },
+              {
+                "name": "DayTimeBucketGroupKey"
+              },
+              {
+                "name": "Hour"
+              },
+              {
+                "name": "HourlyBucket"
+              },
+              {
+                "name": "HourNumber"
+              },
+              {
+                "name": "MinuteNumber"
+              },
+              {
+                "name": "SecondNumber"
+              },
+              {
+                "name": "TimeBKey"
+              },
+              {
+                "name": "TimeID"
+              },
+              {
+                "name": "TimeInSecond"
+              }
+            ]
+          },
+          {
+            "name": "Top 10 Pickup Zip Codes",
+            "columns": [
+              {
+                "name": "Zip Code"
+              }
+            ]
+          },
+          {
+            "name": "Trip",
+            "columns": [
+              {
+                "name": "DateID"
+              },
+              {
+                "name": "DropoffGeographyID"
+              },
+              {
+                "name": "DropoffLatitude"
+              },
+              {
+                "name": "DropoffLongitude"
+              },
+              {
+                "name": "DropoffTimeID"
+              },
+              {
+                "name": "FareAmount"
+              },
+              {
+                "name": "HackneyLicenseID"
+              },
+              {
+                "name": "MedallionID"
+              },
+              {
+                "name": "PassengerCount"
+              },
+              {
+                "name": "PaymentType"
+              },
+              {
+                "name": "PickupGeographyID"
+              },
+              {
+                "name": "PickupLatitude"
+              },
+              {
+                "name": "PickupLongitude"
+              },
+              {
+                "name": "PickupTimeID"
+              },
+              {
+                "name": "SurchargeAmount"
+              },
+              {
+                "name": "TaxAmount"
+              },
+              {
+                "name": "TipAmount"
+              },
+              {
+                "name": "TollsAmount"
+              },
+              {
+                "name": "TotalAmount"
+              },
+              {
+                "name": "TripDistanceMiles"
+              },
+              {
+                "name": "TripDurationSeconds"
+              }
+            ],
+            "measures": [
+              {
+                "name": "Miles per Trip"
+              },
+              {
+                "name": "Minutes per Trip"
+              },
+              {
+                "name": "Revenue"
+              },
+              {
+                "name": "Revenue per Mile"
+              },
+              {
+                "name": "Revenue per Trip"
+              },
+              {
+                "name": "Tip Amount"
+              },
+              {
+                "name": "Tip Amount per Mile"
+              },
+              {
+                "name": "Tip Amount per Trip"
+              },
+              {
+                "name": "Trip Count"
+              },
+              {
+                "name": "Trip Distance Miles"
+              },
+              {
+                "name": "Trip Duration Minutes"
+              }
+            ]
+          },
+          {
+            "name": "User",
+            "columns": [
+              {
+                "name": "User"
+              }
+            ]
+          },
+          {
+            "name": "Weather",
+            "columns": [
+              {
+                "name": "AvgTemperatureFahrenheit"
+              },
+              {
+                "name": "DateID"
+              },
+              {
+                "name": "GeographyID"
+              },
+              {
+                "name": "PrecipitationInches"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "roles": [
+      {
+        "name": "Readers",
+        "description": "Readers of the NYC Taxi data",
+        "modelPermission": "read",
+        "tablePermissions": [
+          {
+            "name": "User",
+            "filterExpression": "User[User]=USERNAME()"
+          }
+        ]
       }
     ]
   },
