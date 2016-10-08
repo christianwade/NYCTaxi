@@ -669,6 +669,32 @@
           {
             "name": "Minutes per Trip",
             "expression": "DIVIDE([Trip Duration Minutes], [Trip Count])"
+          },
+          {
+            "name": "Tip Amount Per Trip Prev Month",
+            "expression": " CALCULATE( [Tip Amount per Trip], LASTDATE( DATEADD('Date'[Date],-1,MONTH) ) )",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Revenue per Trip Prev Month",
+            "expression": " CALCULATE( [Revenue per Trip], LASTDATE( DATEADD('Date'[Date],-1,MONTH) ) )",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "States",
+            "expression": "\"Top 10 Zip Codes in \" & LEFT(CONCATENATEX(VALUES('Pickup Geography'[State]), [State], \",\"), 2)"
           }
         ],
         "annotations": [
@@ -1137,6 +1163,33 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Top 10 Pickup Zip Codes2",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "ZipCode",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[ZipCode]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "CALCULATETABLE(",
+                "     TOPN( 10, VALUES( 'Pickup Geography'[ZipCode] ), Trip[Revenue] ),",
+                "     'Pickup Geography'[State] = \"NJ\"",
+                ")"
+              ]
+            }
+          }
+        ]
       }
     ],
     "relationships": [
@@ -1232,6 +1285,13 @@
         "toColumn": "GeographyID",
         "crossFilteringBehavior": "bothDirections",
         "securityFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "cf48ca12-3c17-492e-bcb5-470b7d4f44a8",
+        "fromTable": "Pickup Geography",
+        "fromColumn": "ZipCode",
+        "toTable": "Top 10 Pickup Zip Codes2",
+        "toColumn": "ZipCode"
       }
     ],
     "perspectives": [
