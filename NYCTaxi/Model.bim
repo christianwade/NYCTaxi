@@ -693,8 +693,12 @@
             ]
           },
           {
-            "name": "States",
-            "expression": "\"Top 10 Zip Codes in \" & LEFT(CONCATENATEX(VALUES('Pickup Geography'[State]), [State], \",\"), 2)"
+            "name": "Dashboard Title",
+            "expression": "\"Top 10 Zip Codes in \" & Trip[Current State]"
+          },
+          {
+            "name": "Current State",
+            "expression": "LEFT(CONCATENATEX(VALUES('Pickup Geography'[State]), [State], \",\"), 2)"
           }
         ],
         "annotations": [
@@ -1287,7 +1291,7 @@
         "securityFilteringBehavior": "bothDirections"
       },
       {
-        "name": "cf48ca12-3c17-492e-bcb5-470b7d4f44a8",
+        "name": "37877ff8-f3c5-48e5-babe-6b0f1f99e4fa",
         "fromTable": "Pickup Geography",
         "fromColumn": "ZipCode",
         "toTable": "Top 10 Pickup Zip Codes2",
@@ -1701,6 +1705,18 @@
         "name": "Readers",
         "description": "Readers of the NYC Taxi data",
         "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "sqlcl01@microsoft.com",
+            "memberId": "sqlcl01@microsoft.com",
+            "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "sqlcl02@microsoft.com",
+            "memberId": "sqlcl02@microsoft.com",
+            "identityProvider": "AzureAD"
+          }
+        ],
         "tablePermissions": [
           {
             "name": "User",
