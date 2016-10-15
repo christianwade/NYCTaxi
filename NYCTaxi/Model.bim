@@ -19,283 +19,6 @@
     ],
     "tables": [
       {
-        "name": "Date",
-        "dataCategory": "Time",
-        "columns": [
-          {
-            "name": "DateID",
-            "dataType": "int64",
-            "sourceColumn": "DateID",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "Date",
-            "dataType": "dateTime",
-            "isKey": true,
-            "sourceColumn": "Date",
-            "formatString": "General Date",
-            "sourceProviderType": "datetime"
-          },
-          {
-            "name": "DateBKey",
-            "dataType": "string",
-            "sourceColumn": "DateBKey",
-            "sourceProviderType": "char"
-          },
-          {
-            "name": "DayOfMonth",
-            "dataType": "string",
-            "sourceColumn": "DayOfMonth",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "DaySuffix",
-            "dataType": "string",
-            "sourceColumn": "DaySuffix",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "DayName",
-            "dataType": "string",
-            "sourceColumn": "DayName",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "DayOfWeek",
-            "dataType": "string",
-            "sourceColumn": "DayOfWeek",
-            "sourceProviderType": "char"
-          },
-          {
-            "name": "DayOfWeekInMonth",
-            "dataType": "string",
-            "sourceColumn": "DayOfWeekInMonth",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "DayOfWeekInYear",
-            "dataType": "string",
-            "sourceColumn": "DayOfWeekInYear",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "DayOfQuarter",
-            "dataType": "string",
-            "sourceColumn": "DayOfQuarter",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "DayOfYear",
-            "dataType": "string",
-            "sourceColumn": "DayOfYear",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "WeekOfMonth",
-            "dataType": "string",
-            "sourceColumn": "WeekOfMonth",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "WeekOfQuarter",
-            "dataType": "string",
-            "sourceColumn": "WeekOfQuarter",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "WeekOfYear",
-            "dataType": "string",
-            "sourceColumn": "WeekOfYear",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "Month",
-            "dataType": "string",
-            "sourceColumn": "Month",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "MonthName",
-            "dataType": "string",
-            "sourceColumn": "MonthName",
-            "sortByColumn": "MonthNum",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "MonthOfQuarter",
-            "dataType": "string",
-            "sourceColumn": "MonthOfQuarter",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "Quarter",
-            "dataType": "string",
-            "sourceColumn": "Quarter",
-            "sourceProviderType": "char"
-          },
-          {
-            "name": "QuarterName",
-            "dataType": "string",
-            "sourceColumn": "QuarterName",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "Year",
-            "dataType": "int64",
-            "sourceColumn": "Year",
-            "sourceProviderType": "char"
-          },
-          {
-            "name": "YearName",
-            "dataType": "string",
-            "sourceColumn": "YearName",
-            "sourceProviderType": "char"
-          },
-          {
-            "name": "MonthYear",
-            "dataType": "string",
-            "sourceColumn": "MonthYear",
-            "sourceProviderType": "char"
-          },
-          {
-            "name": "MMYYYY",
-            "dataType": "string",
-            "sourceColumn": "MMYYYY",
-            "sourceProviderType": "char"
-          },
-          {
-            "name": "FirstDayOfMonth",
-            "dataType": "dateTime",
-            "sourceColumn": "FirstDayOfMonth",
-            "formatString": "General Date",
-            "sourceProviderType": "date"
-          },
-          {
-            "name": "LastDayOfMonth",
-            "dataType": "dateTime",
-            "sourceColumn": "LastDayOfMonth",
-            "formatString": "General Date",
-            "sourceProviderType": "date"
-          },
-          {
-            "name": "FirstDayOfQuarter",
-            "dataType": "dateTime",
-            "sourceColumn": "FirstDayOfQuarter",
-            "formatString": "General Date",
-            "sourceProviderType": "date"
-          },
-          {
-            "name": "LastDayOfQuarter",
-            "dataType": "dateTime",
-            "sourceColumn": "LastDayOfQuarter",
-            "formatString": "General Date",
-            "sourceProviderType": "date"
-          },
-          {
-            "name": "FirstDayOfYear",
-            "dataType": "dateTime",
-            "sourceColumn": "FirstDayOfYear",
-            "formatString": "General Date",
-            "sourceProviderType": "date"
-          },
-          {
-            "name": "LastDayOfYear",
-            "dataType": "dateTime",
-            "sourceColumn": "LastDayOfYear",
-            "formatString": "General Date",
-            "sourceProviderType": "date"
-          },
-          {
-            "name": "IsHolidayUSA",
-            "dataType": "boolean",
-            "sourceColumn": "IsHolidayUSA",
-            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
-            "sourceProviderType": "bit"
-          },
-          {
-            "name": "IsWeekday",
-            "dataType": "boolean",
-            "sourceColumn": "IsWeekday",
-            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
-            "sourceProviderType": "bit"
-          },
-          {
-            "name": "HolidayUSA",
-            "dataType": "string",
-            "sourceColumn": "HolidayUSA",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "type": "calculated",
-            "name": "YYYY-MM",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "RIGHT('Date'[MMYYYY], 4) & \"-\" & LEFT('Date'[MMYYYY], 2)"
-          },
-          {
-            "type": "calculated",
-            "name": "YYYYMM",
-            "dataType": "int64",
-            "isDataTypeInferred": false,
-            "expression": "RIGHT('Date'[MMYYYY], 4) & LEFT('Date'[MMYYYY], 2)"
-          },
-          {
-            "type": "calculated",
-            "name": "MonthNum",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "LEFT('Date'[MMYYYY], 2)"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Date",
-            "dataView": "full",
-            "source": {
-              "query": " SELECT [Date].* FROM [Date] ",
-              "dataSource": "NYC Taxi SQL DW"
-            }
-          }
-        ],
-        "hierarchies": [
-          {
-            "name": "Calendar",
-            "levels": [
-              {
-                "name": "Year",
-                "ordinal": 0,
-                "column": "Year"
-              },
-              {
-                "name": "Quarter",
-                "ordinal": 1,
-                "column": "QuarterName"
-              },
-              {
-                "name": "Month",
-                "ordinal": 2,
-                "column": "MonthName"
-              },
-              {
-                "name": "Day",
-                "ordinal": 3,
-                "column": "DateBKey"
-              }
-            ]
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [Date].* FROM [Date] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Date"
-          }
-        ]
-      },
-      {
         "name": "Medallion",
         "columns": [
           {
@@ -421,298 +144,6 @@
           {
             "name": "_TM_ExtProp_DbTableName",
             "value": "Time"
-          }
-        ]
-      },
-      {
-        "name": "Trip",
-        "columns": [
-          {
-            "name": "DateID",
-            "dataType": "int64",
-            "sourceColumn": "DateID",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "PickupTimeID",
-            "dataType": "int64",
-            "sourceColumn": "PickupTimeID",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "MedallionID",
-            "dataType": "int64",
-            "sourceColumn": "MedallionID",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "HackneyLicenseID",
-            "dataType": "int64",
-            "sourceColumn": "HackneyLicenseID",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "DropoffTimeID",
-            "dataType": "int64",
-            "sourceColumn": "DropoffTimeID",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "PassengerCount",
-            "dataType": "int64",
-            "sourceColumn": "PassengerCount",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "TripDurationSeconds",
-            "dataType": "int64",
-            "sourceColumn": "TripDurationSeconds",
-            "sourceProviderType": "int"
-          },
-          {
-            "name": "TripDistanceMiles",
-            "dataType": "double",
-            "sourceColumn": "TripDistanceMiles",
-            "sourceProviderType": "float"
-          },
-          {
-            "name": "PickupLongitude",
-            "dataType": "double",
-            "sourceColumn": "PickupLongitude",
-            "sourceProviderType": "float"
-          },
-          {
-            "name": "PickupLatitude",
-            "dataType": "double",
-            "sourceColumn": "PickupLatitude",
-            "sourceProviderType": "float"
-          },
-          {
-            "name": "DropoffLongitude",
-            "dataType": "double",
-            "sourceColumn": "DropoffLongitude",
-            "sourceProviderType": "float"
-          },
-          {
-            "name": "DropoffLatitude",
-            "dataType": "double",
-            "sourceColumn": "DropoffLatitude",
-            "sourceProviderType": "float"
-          },
-          {
-            "name": "PaymentType",
-            "dataType": "string",
-            "sourceColumn": "PaymentType",
-            "sourceProviderType": "varchar"
-          },
-          {
-            "name": "FareAmount",
-            "dataType": "decimal",
-            "sourceColumn": "FareAmount",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "sourceProviderType": "money",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "SurchargeAmount",
-            "dataType": "decimal",
-            "sourceColumn": "SurchargeAmount",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "sourceProviderType": "money",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "TaxAmount",
-            "dataType": "decimal",
-            "sourceColumn": "TaxAmount",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "sourceProviderType": "money",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "TipAmount",
-            "dataType": "decimal",
-            "sourceColumn": "TipAmount",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "sourceProviderType": "money",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "TollsAmount",
-            "dataType": "decimal",
-            "sourceColumn": "TollsAmount",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "sourceProviderType": "money",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "TotalAmount",
-            "dataType": "decimal",
-            "sourceColumn": "TotalAmount",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "sourceProviderType": "money",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "PickupGeographyID",
-            "dataType": "int64",
-            "sourceColumn": "PickupGeographyID"
-          },
-          {
-            "name": "DropoffGeographyID",
-            "dataType": "int64",
-            "sourceColumn": "DropoffGeographyID"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Trip",
-            "dataView": "full",
-            "source": {
-              "query": "SELECT top 100 * FROM dbo.[vTrip]",
-              "dataSource": "NYC Taxi SQL DW"
-            },
-            "annotations": [
-              {
-                "name": "QueryEditorSerialization",
-                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT top 100 * FROM dbo.[vTrip]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
-              }
-            ]
-          }
-        ],
-        "measures": [
-          {
-            "name": "Tip Amount",
-            "expression": " SUM( 'Trip'[TipAmount] )",
-            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "Trip Count",
-            "expression": " COUNTROWS(Trip)"
-          },
-          {
-            "name": "Trip Distance Miles",
-            "expression": "SUM([TripDistanceMiles])",
-            "formatString": "#,0"
-          },
-          {
-            "name": "Revenue",
-            "expression": "SUM([TotalAmount])",
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "Revenue per Mile",
-            "expression": "[Revenue]/[Trip Distance Miles]"
-          },
-          {
-            "name": "Tip Amount per Trip",
-            "expression": " DIVIDE([Tip Amount], [Trip Count])"
-          },
-          {
-            "name": "Tip Amount per Mile",
-            "expression": " DIVIDE([Tip Amount], [Trip Distance Miles])"
-          },
-          {
-            "name": "Revenue per Trip",
-            "expression": " DIVIDE([Tip Amount], [Trip Count])"
-          },
-          {
-            "name": "Miles per Trip",
-            "expression": "[Trip Distance Miles]/[Trip Count]"
-          },
-          {
-            "name": "Trip Duration Minutes",
-            "expression": "SUM(Trip[TripDurationSeconds]) / 60"
-          },
-          {
-            "name": "Minutes per Trip",
-            "expression": "DIVIDE([Trip Duration Minutes], [Trip Count])"
-          },
-          {
-            "name": "Tip Amount Per Trip Prev Month",
-            "expression": " CALCULATE( [Tip Amount per Trip], LASTDATE( DATEADD('Date'[Date],-1,MONTH) ) )",
-            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "Revenue per Trip Prev Month",
-            "expression": " CALCULATE( [Revenue per Trip], LASTDATE( DATEADD('Date'[Date],-1,MONTH) ) )",
-            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
-            "annotations": [
-              {
-                "name": "Format",
-                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
-              }
-            ]
-          },
-          {
-            "name": "Dashboard Title",
-            "expression": "\"Top 10 Zip Codes in \" & Trip[Current State]"
-          },
-          {
-            "name": "Current State",
-            "expression": "LEFT(CONCATENATEX(VALUES('Pickup Geography'[State]), [State], \",\"), 2)"
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": "SELECT top 100 * FROM dbo.[vTrip]"
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Trip"
-          },
-          {
-            "name": "QueryEditorSerialization",
-            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT top 100 * FROM dbo.[vTrip]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
           }
         ]
       },
@@ -1085,6 +516,357 @@
         ]
       },
       {
+        "name": "Top 10 Pickup Zip Codes2",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "ZipCode",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[ZipCode]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "CALCULATETABLE(",
+                "     TOPN( 10, VALUES( 'Pickup Geography'[ZipCode] ), Trip[Revenue] ),",
+                "     'Pickup Geography'[State] = \"NJ\"",
+                ")"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Top N Pickup Zip Codes",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "ZipCode",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "Pickup Geography[ZipCode]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "UNION(",
+                "\tCALCULATETABLE(",
+                "\t\t TOPN( 10, VALUES( 'Pickup Geography'[ZipCode] ), Trip[Revenue] ),",
+                "\t\t 'Pickup Geography'[State] = \"NY\"",
+                "\t),",
+                "\tCALCULATETABLE(",
+                "\t\t TOPN( 10, VALUES( 'Pickup Geography'[ZipCode] ), Trip[Revenue] ),",
+                "\t\t 'Pickup Geography'[State] = \"NJ\"",
+                "\t)",
+                ")"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "DateID",
+            "dataType": "int64",
+            "sourceColumn": "DateID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime"
+          },
+          {
+            "name": "DateBKey",
+            "dataType": "string",
+            "sourceColumn": "DateBKey",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "DayOfMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfMonth",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DaySuffix",
+            "dataType": "string",
+            "sourceColumn": "DaySuffix",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayName",
+            "dataType": "string",
+            "sourceColumn": "DayName",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "DayOfWeekInMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInMonth",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfWeekInYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInYear",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "DayOfQuarter",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "DayOfYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfYear",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "WeekOfMonth",
+            "dataType": "string",
+            "sourceColumn": "WeekOfMonth",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "WeekOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "WeekOfQuarter",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "WeekOfYear",
+            "dataType": "string",
+            "sourceColumn": "WeekOfYear",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "Month",
+            "dataType": "int64",
+            "sourceColumn": "Month",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sortByColumn": "MonthNum",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "MonthOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "MonthOfQuarter",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "sourceColumn": "Quarter",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "QuarterName",
+            "dataType": "string",
+            "sourceColumn": "QuarterName",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "YearName",
+            "dataType": "string",
+            "sourceColumn": "YearName",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "MonthYear",
+            "dataType": "string",
+            "sourceColumn": "MonthYear",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "MMYYYY",
+            "dataType": "string",
+            "sourceColumn": "MMYYYY",
+            "sourceProviderType": "char"
+          },
+          {
+            "name": "FirstDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfMonth",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "LastDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfMonth",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "FirstDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfQuarter",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "LastDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfQuarter",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "FirstDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfYear",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "LastDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfYear",
+            "formatString": "General Date",
+            "sourceProviderType": "date"
+          },
+          {
+            "name": "IsHolidayUSA",
+            "dataType": "boolean",
+            "sourceColumn": "IsHolidayUSA",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit"
+          },
+          {
+            "name": "IsWeekday",
+            "dataType": "boolean",
+            "sourceColumn": "IsWeekday",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit"
+          },
+          {
+            "name": "HolidayUSA",
+            "dataType": "string",
+            "sourceColumn": "HolidayUSA",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "type": "calculated",
+            "name": "YYYY-MM",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RIGHT('Date'[MMYYYY], 4) & \"-\" & LEFT('Date'[MMYYYY], 2)"
+          },
+          {
+            "type": "calculated",
+            "name": "YYYYMM",
+            "dataType": "int64",
+            "isDataTypeInferred": false,
+            "expression": "RIGHT('Date'[MMYYYY], 4) & LEFT('Date'[MMYYYY], 2)"
+          },
+          {
+            "type": "calculated",
+            "name": "MonthNum",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LEFT('Date'[MMYYYY], 2)"
+          },
+          {
+            "type": "calculated",
+            "name": "LastRefreshDate",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "expression": "NOW() - 7/24",
+            "formatString": "General Date"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Date",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [Date].* FROM [Date] ",
+              "dataSource": "NYC Taxi SQL DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Last Refresh Text",
+            "expression": "\"Last Refresh: \" & FORMAT(MAX([LastRefreshDate]), \"General Date\")"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Calendar",
+            "levels": [
+              {
+                "name": "Year",
+                "ordinal": 0,
+                "column": "Year"
+              },
+              {
+                "name": "Quarter",
+                "ordinal": 1,
+                "column": "QuarterName"
+              },
+              {
+                "name": "Month",
+                "ordinal": 2,
+                "column": "MonthName"
+              },
+              {
+                "name": "Day",
+                "ordinal": 3,
+                "column": "DateBKey"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Date].* FROM [Date] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Date"
+          }
+        ]
+      },
+      {
         "name": "Security",
         "isHidden": true,
         "columns": [
@@ -1104,16 +886,18 @@
         "partitions": [
           {
             "name": "Security",
-            "dataView": "full",
             "source": {
               "query": [
                 "SELECT GeographyID, 'sqlcl01@microsoft.com' AS [User]",
                 "FROM dbo.[Geography]",
                 "WHERE [State] = 'NY'",
+                "",
                 "UNION",
+                "",
                 "SELECT GeographyID, 'sqlcl02@microsoft.com' AS [User]",
                 "FROM dbo.[Geography]",
                 "WHERE [State] = 'NJ'",
+                "",
                 "ORDER BY 1"
               ],
               "dataSource": "NYC Taxi SQL DW"
@@ -1125,10 +909,13 @@
                   "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT GeographyID, 'sqlcl01@microsoft.com' AS [User]",
                   "FROM dbo.[Geography]",
                   "WHERE [State] = 'NY'",
+                  "",
                   "UNION",
+                  "",
                   "SELECT GeographyID, 'sqlcl02@microsoft.com' AS [User]",
                   "FROM dbo.[Geography]",
                   "WHERE [State] = 'NJ'",
+                  "",
                   "ORDER BY 1</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
                 ]
               }
@@ -1169,40 +956,387 @@
         ]
       },
       {
-        "name": "Top 10 Pickup Zip Codes2",
+        "name": "Trip",
         "columns": [
           {
-            "type": "calculatedTableColumn",
-            "name": "ZipCode",
+            "name": "DateID",
+            "dataType": "int64",
+            "sourceColumn": "DateID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "PickupTimeID",
+            "dataType": "int64",
+            "sourceColumn": "PickupTimeID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "MedallionID",
+            "dataType": "int64",
+            "sourceColumn": "MedallionID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "HackneyLicenseID",
+            "dataType": "int64",
+            "sourceColumn": "HackneyLicenseID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "DropoffTimeID",
+            "dataType": "int64",
+            "sourceColumn": "DropoffTimeID",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "PassengerCount",
+            "dataType": "int64",
+            "sourceColumn": "PassengerCount",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "TripDurationSeconds",
+            "dataType": "int64",
+            "sourceColumn": "TripDurationSeconds",
+            "sourceProviderType": "int"
+          },
+          {
+            "name": "TripDistanceMiles",
+            "dataType": "double",
+            "sourceColumn": "TripDistanceMiles",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "PickupLongitude",
+            "dataType": "double",
+            "sourceColumn": "PickupLongitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "PickupLatitude",
+            "dataType": "double",
+            "sourceColumn": "PickupLatitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "DropoffLongitude",
+            "dataType": "double",
+            "sourceColumn": "DropoffLongitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "DropoffLatitude",
+            "dataType": "double",
+            "sourceColumn": "DropoffLatitude",
+            "sourceProviderType": "float"
+          },
+          {
+            "name": "PaymentType",
             "dataType": "string",
-            "isNameInferred": true,
-            "isDataTypeInferred": true,
-            "sourceColumn": "Pickup Geography[ZipCode]"
+            "sourceColumn": "PaymentType",
+            "sourceProviderType": "varchar"
+          },
+          {
+            "name": "FareAmount",
+            "dataType": "decimal",
+            "sourceColumn": "FareAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "SurchargeAmount",
+            "dataType": "decimal",
+            "sourceColumn": "SurchargeAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TaxAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TipAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TipAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TollsAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TollsAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "TotalAmount",
+            "dataType": "decimal",
+            "sourceColumn": "TotalAmount",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "money",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "PickupGeographyID",
+            "dataType": "int64",
+            "sourceColumn": "PickupGeographyID"
+          },
+          {
+            "name": "DropoffGeographyID",
+            "dataType": "int64",
+            "sourceColumn": "DropoffGeographyID"
+          },
+          {
+            "name": "TripDurationMinutes",
+            "dataType": "string",
+            "sourceColumn": "TripDurationMinutes",
+            "sortByColumn": "TripDurationMinutesOrderBy"
+          },
+          {
+            "name": "TripDurationMinutesOrderBy",
+            "dataType": "int64",
+            "sourceColumn": "TripDurationMinutesOrderBy"
           }
         ],
         "partitions": [
           {
-            "name": "CalculatedTable 1",
+            "name": "Trip",
             "source": {
-              "type": "calculated",
-              "expression": [
-                "CALCULATETABLE(",
-                "     TOPN( 10, VALUES( 'Pickup Geography'[ZipCode] ), Trip[Revenue] ),",
-                "     'Pickup Geography'[State] = \"NJ\"",
-                ")"
-              ]
-            }
+              "query": "SELECT top 100 * FROM dbo.[vTrip]",
+              "dataSource": "NYC Taxi SQL DW"
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT top 100 * FROM dbo.[vTrip]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+              }
+            ]
+          }
+        ],
+        "measures": [
+          {
+            "name": "Tip Amount",
+            "expression": " SUM( 'Trip'[TipAmount] )",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Trip Count",
+            "expression": " COUNTROWS(Trip)"
+          },
+          {
+            "name": "Trip Distance Miles",
+            "expression": "SUM([TripDistanceMiles])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Revenue",
+            "expression": "SUM([TotalAmount])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Miles per Trip",
+            "expression": "DIVIDE([Trip Distance Miles], [Trip Count])"
+          },
+          {
+            "name": "Trip Duration Minutes",
+            "expression": "SUM(Trip[TripDurationSeconds]) / 60"
+          },
+          {
+            "name": "Minutes per Trip",
+            "expression": "DIVIDE([Trip Duration Minutes], [Trip Count])"
+          },
+          {
+            "name": "Dashboard Title",
+            "expression": "\"Top 10 Zip Codes in \" & Trip[Current State]"
+          },
+          {
+            "name": "Current State",
+            "expression": "LEFT(CONCATENATEX(VALUES('Pickup Geography'[State]), [State], \",\"), 2)"
+          },
+          {
+            "name": "Revenue per Mile",
+            "expression": "DIVIDE([Revenue],[Trip Distance Miles])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Revenue per Trip",
+            "expression": " DIVIDE([Tip Amount], [Trip Count])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Revenue per Trip Prev Month",
+            "expression": " CALCULATE( [Revenue per Trip], LASTDATE( DATEADD('Date'[Date],-1,MONTH) ) )",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Tip Amount per Mile",
+            "expression": " DIVIDE([Tip Amount], [Trip Distance Miles])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Tip Amount per Trip",
+            "expression": " DIVIDE([Tip Amount], [Trip Count])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Tip Amount Per Trip Prev Month",
+            "expression": " CALCULATE( [Tip Amount per Trip], LASTDATE( DATEADD('Date'[Date],-1,MONTH) ) )",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": "SELECT top 100 * FROM dbo.[vTrip]"
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Trip"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT top 100 * FROM dbo.[vTrip]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
           }
         ]
       }
     ],
     "relationships": [
       {
-        "name": "5ff89e53-c93e-4ca0-8a99-58063fb30174",
-        "fromTable": "Trip",
+        "name": "4b9bd896-973e-4b08-82da-2051b85300af",
+        "fromTable": "Weather",
+        "fromColumn": "GeographyID",
+        "toTable": "Pickup Geography",
+        "toColumn": "GeographyID"
+      },
+      {
+        "name": "fbb7b135-65d2-4f0b-821a-9640807d8ec8",
+        "fromTable": "Weather",
+        "fromColumn": "GeographyID",
+        "toTable": "Dropoff Geography",
+        "toColumn": "GeographyID"
+      },
+      {
+        "name": "758ef47e-b751-451d-9c7e-050a9e3b7a66",
+        "fromTable": "Pickup Geography",
+        "fromColumn": "ZipCode",
+        "toTable": "Top 10 Pickup Zip Codes",
+        "toColumn": "Zip Code"
+      },
+      {
+        "name": "37877ff8-f3c5-48e5-babe-6b0f1f99e4fa",
+        "fromTable": "Pickup Geography",
+        "fromColumn": "ZipCode",
+        "toTable": "Top 10 Pickup Zip Codes2",
+        "toColumn": "ZipCode"
+      },
+      {
+        "name": "2934c9a3-e98c-41f5-b6f6-0c6fec87a1bf",
+        "fromTable": "Weather",
         "fromColumn": "DateID",
         "toTable": "Date",
         "toColumn": "DateID"
+      },
+      {
+        "name": "a7eccdcf-5d69-4a5f-9d8e-b959c6cd72f2",
+        "fromTable": "Security",
+        "fromColumn": "User",
+        "toTable": "User",
+        "toColumn": "User"
+      },
+      {
+        "name": "9e015141-3daa-4de0-b753-1101397f09ed",
+        "fromTable": "Security",
+        "fromColumn": "GeographyID",
+        "toTable": "Pickup Geography",
+        "toColumn": "GeographyID",
+        "crossFilteringBehavior": "bothDirections",
+        "securityFilteringBehavior": "bothDirections"
       },
       {
         "name": "4997732a-81fd-4b3e-ad15-1f26447e71e4",
@@ -1226,20 +1360,6 @@
         "toColumn": "HackneyLicenseID"
       },
       {
-        "name": "2934c9a3-e98c-41f5-b6f6-0c6fec87a1bf",
-        "fromTable": "Weather",
-        "fromColumn": "DateID",
-        "toTable": "Date",
-        "toColumn": "DateID"
-      },
-      {
-        "name": "4b9bd896-973e-4b08-82da-2051b85300af",
-        "fromTable": "Weather",
-        "fromColumn": "GeographyID",
-        "toTable": "Pickup Geography",
-        "toColumn": "GeographyID"
-      },
-      {
         "name": "aecf4dfb-f105-4971-ba75-c4e56f786eb5",
         "fromTable": "Trip",
         "fromColumn": "PickupGeographyID",
@@ -1254,13 +1374,6 @@
         "toColumn": "GeographyID"
       },
       {
-        "name": "fbb7b135-65d2-4f0b-821a-9640807d8ec8",
-        "fromTable": "Weather",
-        "fromColumn": "GeographyID",
-        "toTable": "Dropoff Geography",
-        "toColumn": "GeographyID"
-      },
-      {
         "name": "a346ee4b-47f4-4d7f-b3dc-bdb100c46e88",
         "fromTable": "Trip",
         "fromColumn": "DropoffTimeID",
@@ -1268,39 +1381,23 @@
         "toColumn": "TimeID"
       },
       {
-        "name": "758ef47e-b751-451d-9c7e-050a9e3b7a66",
+        "name": "5ff89e53-c93e-4ca0-8a99-58063fb30174",
+        "fromTable": "Trip",
+        "fromColumn": "DateID",
+        "toTable": "Date",
+        "toColumn": "DateID"
+      },
+      {
+        "name": "5eea3043-a111-4e88-bf6e-8f14bd306a2a",
         "fromTable": "Pickup Geography",
         "fromColumn": "ZipCode",
-        "toTable": "Top 10 Pickup Zip Codes",
-        "toColumn": "Zip Code"
-      },
-      {
-        "name": "a7eccdcf-5d69-4a5f-9d8e-b959c6cd72f2",
-        "fromTable": "Security",
-        "fromColumn": "User",
-        "toTable": "User",
-        "toColumn": "User"
-      },
-      {
-        "name": "9e015141-3daa-4de0-b753-1101397f09ed",
-        "fromTable": "Security",
-        "fromColumn": "GeographyID",
-        "toTable": "Pickup Geography",
-        "toColumn": "GeographyID",
-        "crossFilteringBehavior": "bothDirections",
-        "securityFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "37877ff8-f3c5-48e5-babe-6b0f1f99e4fa",
-        "fromTable": "Pickup Geography",
-        "fromColumn": "ZipCode",
-        "toTable": "Top 10 Pickup Zip Codes2",
+        "toTable": "Top N Pickup Zip Codes",
         "toColumn": "ZipCode"
       }
     ],
     "perspectives": [
       {
-        "name": "Taxi Operators",
+        "name": "NYC Taxi",
         "tables": [
           {
             "name": "Date",
@@ -1409,11 +1506,19 @@
               },
               {
                 "name": "YYYY-MM"
+              },
+              {
+                "name": "LastRefreshDate"
               }
             ],
             "hierarchies": [
               {
                 "name": "Calendar"
+              }
+            ],
+            "measures": [
+              {
+                "name": "Last Refresh Text"
               }
             ]
           },
@@ -1630,10 +1735,13 @@
                 "name": "TotalAmount"
               },
               {
-                "name": "TripDistanceMiles"
+                "name": "TripDurationSeconds"
               },
               {
-                "name": "TripDurationSeconds"
+                "name": "TripDurationMinutes"
+              },
+              {
+                "name": "TripDurationMinutesOrderBy"
               }
             ],
             "measures": [
@@ -1653,30 +1761,19 @@
                 "name": "Revenue per Trip"
               },
               {
-                "name": "Tip Amount"
-              },
-              {
-                "name": "Tip Amount per Mile"
-              },
-              {
-                "name": "Tip Amount per Trip"
-              },
-              {
                 "name": "Trip Count"
               },
               {
                 "name": "Trip Distance Miles"
               },
               {
-                "name": "Trip Duration Minutes"
-              }
-            ]
-          },
-          {
-            "name": "User",
-            "columns": [
+                "name": "Current State"
+              },
               {
-                "name": "User"
+                "name": "Dashboard Title"
+              },
+              {
+                "name": "Revenue per Trip Prev Month"
               }
             ]
           },
@@ -1696,6 +1793,25 @@
                 "name": "PrecipitationInches"
               }
             ]
+          },
+          {
+            "name": "User",
+            "columns": [
+              {
+                "name": "User"
+              }
+            ]
+          },
+          {
+            "name": "Security",
+            "columns": [
+              {
+                "name": "GeographyID"
+              },
+              {
+                "name": "User"
+              }
+            ]
           }
         ]
       }
@@ -1705,18 +1821,6 @@
         "name": "Readers",
         "description": "Readers of the NYC Taxi data",
         "modelPermission": "read",
-        "members": [
-          {
-            "memberName": "sqlcl01@microsoft.com",
-            "memberId": "sqlcl01@microsoft.com",
-            "identityProvider": "AzureAD"
-          },
-          {
-            "memberName": "sqlcl02@microsoft.com",
-            "memberId": "sqlcl02@microsoft.com",
-            "identityProvider": "AzureAD"
-          }
-        ],
         "tablePermissions": [
           {
             "name": "User",
