@@ -1216,7 +1216,7 @@
           },
           {
             "name": "Revenue per Trip",
-            "expression": " DIVIDE([Tip Amount], [Trip Count])",
+            "expression": " DIVIDE([Revenue], [Trip Count])",
             "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "annotations": [
               {
